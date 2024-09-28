@@ -82,6 +82,27 @@ const matrixGenerator = (cardValues, size = 4) => {
     // simple shuffle
     cardValues.sort(() => Math.random() - 0.5);
     for (let i=0; i<size*size;i++){
+        /*
+        Create cards
+        before => front side (contains question mark)
+        after => back side (contains image)
+        data-cards-values is a custom attribute which stores the names of th cards to match later
+        */
+       gameContainer.innerHTML +=`
+       <div class="cards-container" data-cards-values="${cardValues[i].name}">
+       <div class="card-before">?</div>
+       </div>`
 
     }
 };
+
+// Initialize values and function calls
+const initializer = () => {
+    result.innerText = "";
+    winCount = 0;
+    let cardValues = generateRandom();
+    console.log(cardValues);
+    matrixGenerator(cardValues);
+};
+
+initializer();
