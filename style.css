@@ -5,7 +5,7 @@
     font-family: "Poppins", sans-serif;
 }
 body{
-    background-color: #f4c531;
+    background: #f4c531;
 }
 .wrapper{
     box-sizing: border-box;
@@ -23,5 +23,4 @@ body{
     position: relative;
     width: 100%;
     display: grid;
-    
 }
