@@ -148,6 +148,32 @@ const matrixGenerator = (cardValues, size = 4) => {
   });
 };
 
+// Start Game
+startButton.addEventListener("click", () => {
+  movesCount = 0;
+  time = 0;
+  // controls and buttons visibility
+  controls.classList.add("hide");
+  stopButton.classList.remove("hide");
+  startButton.classList.add("hide");
+  //  Start timer
+  interval = setInterval(timeGenerator, 1000);
+  // initial moves
+  moves.innerHTML = `<span>Moves:</span> ${movesCount}`;
+  initializer();
+});
+
+// Stop Game
+stopButton.addEventListener(
+  "click",
+  (stopGame = () => {
+    controls.classList.remove("hide");
+    stopButton.classList.add("hide");
+    startButton.classList.remove("hide");
+    clearInterval(interval);
+  })
+);
+
 // Initialize values and function calls
 const initializer = () => {
   result.innerText = "";
