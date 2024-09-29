@@ -13,18 +13,18 @@ let secondCard = false;
 
 // Items array
 const items = [
-    {name: "bee", image: "image/bee.png"},
-    {name: "crocodile", image: "image/crocodile.png"},
-    {name: "anaconda", image: "image/anaconda.png"},
-    {name: "berries", image: "image/berries.png"},
-    {name: "bird", image: "image/bird.png"},
-    {name: "butterfly", image: "image/butterfly.png"},
-    {name: "chameleon", image: "image/chameleon.png"},
-    {name: "flamingo", image: "image/flamingo.png"},
-    {name: "gorilla", image: "image/gorilla.png"},
-    {name: "panther", image: "image/panther.png"},
-    {name: "tarantula", image: "image/tarantula.png"},
-    {name: "toucan", image: "image/toucan.png"}
+    {name: "bee", image: "bee.png"},
+    {name: "crocodile", image: "crocodile.png"},
+    {name: "anaconda", image: "anaconda.png"},
+    {name: "berries", image: "berries.png"},
+    {name: "bird", image: "bird.png"},
+    {name: "butterfly", image: "butterfly.png"},
+    {name: "chameleon", image: "chameleon.png"},
+    {name: "flamingo", image: "flamingo.png"},
+    {name: "gorilla", image: "gorilla.png"},
+    {name: "panther", image: "panther.png"},
+    {name: "tarantula", image: "tarantula.png"},
+    {name: "toucan", image: "toucan.png"},
 ];
 
 // Initial Time
@@ -45,10 +45,8 @@ const timeGenerator = () => {
     }
 
 // format time before displaying
-let secondsValue = seconds < 10 ? `0${seconds}` :
-        seconds;
-let minutesValue = minutes < 10 ? `0${minutes}` :
-        minutes;
+let secondsValue = seconds < 10 ? `0${seconds}` :seconds;
+let minutesValue = minutes < 10 ? `0${minutes}` :minutes;
 timeValue.innerHTML = `<span>Time:</span> ${minutesValue}:${secondsValue}`;
 };
 
@@ -74,7 +72,7 @@ const generateRandom = (size = 4) => {
         tempArray.splice(randomIndex, 1);
     }  
     return cardValues;  
-}
+};
 
 const matrixGenerator = (cardValues, size = 4) => {
     gameContainer.innerHTML = "";
@@ -91,9 +89,48 @@ const matrixGenerator = (cardValues, size = 4) => {
        gameContainer.innerHTML +=`
        <div class="cards-container" data-cards-values="${cardValues[i].name}">
        <div class="card-before">?</div>
-       </div>`
-
+       <div class="cards-after">
+       <img src="images/${cardValues[i].image}" class="image"/>
+       </div>
+       </div>
+       `
+       ;
     }
+// Grid
+gameContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
+
+// Cards
+cards = document.querySelectorAll('.cards-container');
+cards.forEach((cards) => {
+    card.addEventListener("click", () => {
+        // If selectd card is not matched yet then only run(i.e already matched card when clicked will be ignored)
+        if(!card.classList.contains("matched")) {
+            // flip the clicked card
+            card.classList.add("flipped");
+            // if it is the firstcard (!first since firstcard is initially false)
+            if(!firstCard){
+                // so current card will become firstcard
+                firstCard = card;
+                // current cards value becomes firstCardValue
+                firstCardValue = card.getAttribute("data-card-value");
+            }
+        }
+        // increment moves since user selected second card
+        movesCounter();
+        // secondCard and value
+        let secondCardValue = card.getAttribute("data-card-value");
+        if(firstCardValue == secondCardValue){
+            // if both cards match add matched class so these cards would be ignored next time
+            firstCard.classList.add("matched");
+            secondCard.classList.add("matched");
+            // set firstcard to false since next card would be first now
+            firstCard = false;
+            // winCount increment as user found a correct match
+            winCount+
+        }
+    })
+}
+)
 };
 
 // Initialize values and function calls
