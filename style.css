@@ -112,3 +112,60 @@ button{
     object-fit: cover;      
     border-radius: 5px;     
 }
+
+@media only screen and (max-width: 768px) {
+    .wrapper {
+      width: 85%; 
+      padding: 1.5em 2em; 
+    }
+    .game-container {
+      gap: 0em; 
+    }
+    .card-container {
+      width: 5em; 
+      height: 5em; 
+    }
+    .stats-container {
+      margin-bottom: 0.8em; 
+    }
+    .controls-container {
+      flex-direction: row; 
+      justify-content: center;
+    }
+    button {
+      padding: 0.8em 1.2em;
+      margin: 0 auto;
+    }
+    #stop {
+      font-size: 1em; 
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .wrapper {
+      width: 85%;
+      padding: 1em 1.5em;
+    }
+    .game-container {
+      gap: 0.2em;
+    }
+    .card-container {
+      width: 4em; 
+      height: 4em; 
+    }
+    .stats-container {
+      margin-bottom: 0.5em; 
+    }
+    .controls-container {
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+    }
+    button {
+      padding: 0.6em 1em;
+      margin: 0.5em auto;
+    }
+    #stop {
+      font-size: 0.9em;
+    }
+  }
