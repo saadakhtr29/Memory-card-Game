@@ -5,6 +5,7 @@ const stopButton = document.getElementById("stop");
 const gameContainer = document.querySelector(".game-container");
 const result = document.getElementById("result");
 const controls = document.querySelector(".controls-container");
+
 let cards;
 let interval;
 let firstCard = false;
@@ -172,6 +173,7 @@ stopButton.addEventListener(
     clearInterval(interval);
   })
 );
+
 
 //Initialize values and func calls
 const initializer = () => {
