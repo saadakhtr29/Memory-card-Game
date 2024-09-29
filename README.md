@@ -62,4 +62,3 @@ None currently known. If you encounter any issues, please report them in the iss
 <li> Add more game modes (e.g. timed mode, infinite mode)
 <li> Add more card symbols and images
 <li> Improve game performance and optimization
-<li> Add mobile support
