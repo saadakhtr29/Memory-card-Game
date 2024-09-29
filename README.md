@@ -58,7 +58,7 @@ If you'd like to contribute to the game, please fork the repository and submit a
 <h2>Known Issues</h2>
 None currently known. If you encounter any issues, please report them in the issues section of the repository.
 <br>
-<h2></h2>
+<h2>Future Development</h2>
 <li> Add more game modes (e.g. timed mode, infinite mode)
 <li> Add more card symbols and images
 <li> Improve game performance and optimization
