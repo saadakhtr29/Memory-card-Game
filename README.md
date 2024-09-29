@@ -13,9 +13,6 @@ The game is simple: click on a card to flip it over and reveal its symbol. Try t
 <h3><li>Move Counter</h3>
 The game keeps track of how many moves you've made. Each time you click on a card, the move counter increments.
 <br>
-<h3><li>Stop Game</h3>
-You can stop the game at any time and start again from the beginning. Clicking the "Stop Game" button will reset the timer and move counter, and shuffle the cards.
-<br>
 <h3><li>Start Game</h3>
 Click the "Start Game" button to begin a new game. This will reset the timer and move counter, and shuffle the cards.
 <br>
