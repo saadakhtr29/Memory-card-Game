@@ -1,7 +1,8 @@
 # Memory-card-Game
 
-<h2>About</h2>
 Welcome to the Memory Card Game, a fun and challenging game that tests your memory and concentration! The game is built using HTML, CSS, and JavaScript, and is designed to be played in a web browser.
+<br>
+<h3>Check it out at</h3>https://memory-card-game-saad-akhtars-projects.vercel.app
 <br>
 <h2>Gameplay</h2>
 The game is simple: click on a card to flip it over and reveal its symbol. Try to find the matching symbol by clicking on another card. If the symbols match, the cards will stay flipped over. If they don't match, the cards will flip back over. The goal is to find all the matching pairs in as few moves as possible.
