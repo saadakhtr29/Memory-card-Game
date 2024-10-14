@@ -1,25 +1,21 @@
 self.addEventListener('install', event => {
-    event.waitUntil(
-      caches.open('my-cache').then(cache => {
-        return cache.addAll([
+  event.waitUntil(
+    caches.open('my-cache').then(cache => {
+      return Promise.all([
+        cache.addAll([
           '/',
           '/index.html',
           '/style.css',
           '/script.js',
-          '/images/Memory-cardGameFavicon.png',
-          '/images',
           '/manifest.json'
-        ]);
-      })
-    );
-  });
-  
-  self.addEventListener('fetch', event => {
-    event.respondWith(
-      caches.open('my-cache').then(cache => {
-        return cache.match(event.request).then(response => {
-          return response || fetch(event.request);
-        });
-      })
-    );
-  });
+        ]),
+        fetch('/images/')
+          .then(response => response.text())
+          .then(html => {
+            const images = Array.from(html.matchAll(/href="([^"]+)"/g), m => m[1]);
+            return cache.addAll(images.map(image => `/images/${image}`));
+          })
+      ]);
+    })
+  );
+});
