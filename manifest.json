@@ -2,7 +2,7 @@
     "name": "Memory-card Game",
     "short_name": "Memory Game",
     "theme_color": "#ffcbe4",
-    "background_color": "#fa99ca",
+    "background_color": "#f4c531",
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
