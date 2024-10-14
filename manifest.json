@@ -1,0 +1,17 @@
+{
+    "name": "Memory-card Game",
+    "short_name": "Memory Game",
+    "theme_color": "#ffcbe4",
+    "background_color": "#fa99ca",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "description": "A memory card game",
+    "orientation": "any",
+    "icons": [
+      {
+        "src": "images/Memory-cardGameFavicon.png",
+        "sizes": "1024x1024"
+      }
+    ]
+  }
