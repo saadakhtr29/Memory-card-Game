@@ -7,6 +7,7 @@ self.addEventListener('install', event => {
           '/style.css',
           '/script.js',
           '/images/Memory-cardGameFavicon.png',
+          '/images',
           '/manifest.json'
         ]);
       })
